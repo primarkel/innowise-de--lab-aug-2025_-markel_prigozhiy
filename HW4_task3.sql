@@ -6,3 +6,8 @@ GRANT SELECT ON Employees TO hr_user;
 
 -- 3. Аналогично даем права на insert и update 
 GRANT INSERT, UPDATE ON Employees TO hr_user;
+
+-- в другой сессии при входе hr_user след скрипт:
+SELECT * FROM Employees;
+INSERT INTO Employees (FirstName, LastName, Department, Salary) 
+VALUES ('mama', 'moya', 'god', '1000000.00');
