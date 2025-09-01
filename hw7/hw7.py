@@ -40,7 +40,7 @@ def task3():
 
 # Задание (функция) 4: обработка данных
 def task4():
-    scores = [75, 88, -10, 95, 100, -25, 89]
+    scores = [75, 88, -10, 95, 100, -25, 89, 0]
     total_score = 0
     for score in scores:
         if score < 0:
