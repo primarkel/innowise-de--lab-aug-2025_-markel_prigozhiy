@@ -66,34 +66,26 @@ def task5():
         print("Нужно ввести число!\n")
 
 # главное меню
-def main():
-    while True:
-        print("Выберите задачу: ")
-        print("1 - список покупок")
-        print("2 - обратный отсчет")
-        print("3 - угадай число")
-        print("4 - обработка данных")
-        print("5 - рисуем прямоугольник")
-        print("0 - выход")
+menu_options = {
+'1': ("список покупок", task1),
+'2': ("обратный отсчет", task2),
+'3': ("угадай число", task3),
+'4': ("обработка данных", task4),
+'5': ("рисуем прямоугольник", task5),
+}
 
-        choice = input("Ваш выбор: ")
+while True:
+    print("\nВыберите задачу:")
+    for key, value in menu_options.items():
+        print(f"{key} - {value[0]}")
+    print("0 - выход")
 
-        if choice == "1":
-            task1()
-        elif choice == "2":
-            task2()
-        elif choice == "3":
-            task3()
-        elif choice == "4":
-            task4()
-        elif choice == "5":
-            task5()
-        elif choice == "0":
-            print("выход из программы")
-            break
-        else: print("Неверный выбор, попробуйте снова\n")
+    choice = input("Ваш выбор: ")
 
-main()
-
-
-
+    if choice == "0":
+        print("выход из программы")
+        break
+    elif choice in menu_options:
+        menu_options[choice][1]()
+    else:
+        print("Неверный выбор, попробуйте снова\n")
